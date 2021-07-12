@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block teaser %}
-    {% with title='Staff' %}
+    {% with title='Works' %}
         {% include "includes/breadcrumbs.html" %}
     {% endwith %}
 {% endblock teaser %}
@@ -10,33 +10,28 @@
 {% block content %}
 <div class="inner">
     <div id="primary" class="grid_11 suffix_1">
+
         <article class="single">
-            <!-- First canditate -->
-            <div class="candidate radius grid_6">
-                <div class="candidate-margins">
 
-                    {% if s.image %}
-                        <img width="200" height="210" src="{{ s.image.url }}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
-                    {% endif %}
-                    <div class="name">{{ s.first_name }}  {{ s.last_name }}</div>
-                    <div class="position">{% if s.role %}{{ s.role|lower }}{% else %}board member{% endif %}</div>
-                    <!--<div class="social-icons">
-                        <a class="fb radius" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        <a class="tw radius" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a class="pn radius" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a class="in radius" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a class="gp radius" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                        <a class="gh radius" href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        <a class="fl radius" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
-                    </div>-->
+            <div class="entry-content">
 
+                <figure>
+                    <img width="848" height="352" src="{{ w.image.url }}" class="wp-post-image" alt="{{ w.title }}">
+                </figure>
+
+                <div class="long-description">
+                    <h3>{{ w.title }}</h3>
+                    <br />
+                    {% for desc in w.descriptions %}
+                        {% if desc %}
+                            <p>{{ desc }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-            </div>
 
-            <div class="candidate-about fright">
-                <h3>{{ s.intro }}</h3>
-                <br />
-                <p>{{ s.bio }}</p>
+
+                <div class="clear"></div>
+
             </div>
 
             <div class="clear"></div>
@@ -47,6 +42,7 @@
     </div>
 
     <div id="secondary" class="grid_4 widget-area" role="complementary">
+
 
         <aside id="wpltfb-2" class="widget WPlookCauses">
             <div class="widget-title">

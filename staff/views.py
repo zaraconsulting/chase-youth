@@ -1,3 +1,4 @@
+from blog.models import Post
 from django.shortcuts import get_object_or_404, render
 from .models import Staff
 
@@ -11,6 +12,7 @@ def index(request):
 def single(request, slug):
     staff = get_object_or_404(Staff, slug=slug)
     context = {
-        's': staff
+        's': staff,
+        'news': Post.objects.order_by('-date_created').all(),
     }
     return render(request, 'staff/single.html', context)

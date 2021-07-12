@@ -3,7 +3,8 @@
     max-width: 292px;
 }
 
-/* .candidate img {
-    max-width: 200px;
-    max-height: 210px;
-} */
+#teaser li > img {
+    height: 714px;
+    width: 1920px;
+    object-fit: contain;
+}

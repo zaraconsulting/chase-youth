@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'storages',
+    'works.apps.WorksConfig',
     'blog.apps.BlogConfig',
     'staff.apps.StaffConfig',
     'events.apps.EventsConfig',

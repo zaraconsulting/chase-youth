@@ -34,13 +34,13 @@
 
                 <div class="entry-meta">
                     <time class="dtstart" datetime="{{ e.date }}">
-                        <a class="buttons time fleft" href="#">
+                        <a class="buttons time fleft" href="{% url 'event.single' e.id %}">
                             <i class="fa fa-calendar" aria-hidden="true"></i> 
                             {{ e.date|date:"M d, Y" }}
                         </a>
                     </time>
                     {# <a class="buttons facebook fleft" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>  #}
-                    <a class="buttons fright" href="{% url 'event.single' e.id %}" title="Join us">Join us</a>
+                    <a class="buttons fright" href="{% url 'event.single' e.id %}" title="Join us">Read more</a>
                 </div>
                 <div class="clear"></div>
 
