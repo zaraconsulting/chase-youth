@@ -1,0 +1,19 @@
+<header id="branding" class="site-header" role="banner">
+    <div id="sticky_navigation">
+        <div class="container_16">
+            <hgroup class="fleft grid_5">
+                <h1 id="site-title"><a href="{% url 'main.home' %}" title="{{ COMPANY_NAME }} - Foundation" rel="home">{{ COMPANY_NAME }}</a></h1>
+                <h2 id="site-description">Company Slogan</h2>
+            </hgroup>
+
+            <nav role="navigation" class="site-navigation main-navigation grid_11" id="site-navigation">
+                <div class="menu-main-menu-container">
+                    {% include "includes/navigation.html" %}
+                </div>
+            </nav>
+            <!-- .site-navigation .main-navigation -->
+            <div class="grid_16 mob-nav"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>

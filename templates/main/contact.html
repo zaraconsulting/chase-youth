@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block teaser %}
+{% with title='Contact Us' %}
+{% include "includes/breadcrumbs.html" %}
+{% endwith %}
+{% endblock teaser %}
+
+{% block content %}
+<div class="inner">
+    <div id="primary" class="grid_11 suffix_1">
+        <article class="single">
+
+            <div class="entry-content">
+
+                <div class="long-description">
+                    <h3>Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque nisi, facilisis id nulla ut, laoreet hendrerit elit. Suspendisse ligula ipsum, rhoncus et facilisis lobortis, vulputate sit amet.</h3>
+                </div>
+                <br />
+                <h3>Book your place:</h3>
+                <br />
+                <form action="processForm.php" id="contact-form" method="post">
+
+                    <p>
+                        <label for="contactName"></label>
+                        <input class="radius" type="text" name="contactName" id="contactName" value="" placeholder="Name*" required />
+                        <span class="clear"></span>
+                    </p>
+                    <p>
+                        <label for="email"></label>
+                        <input class="radius" type="email" name="email" id="email" value="" placeholder="Email Adress*" required />
+                        <span class="clear"></span>
+                    </p>
+                    <p>
+                        <label for="commentsText"></label>
+                        <textarea class="contactme-text required requiredField radius" name="message" cols="10" rows="10" placeholder="Message" required="required"></textarea>
+                        <span class="clear"></span>
+                    </p>
+                    <p>
+                        <input class="buttons radius send" value="Send !" type="submit" />
+                        <input type="hidden" name="submitted" id="submitted" value="true" />
+                    </p>
+                </form>
+
+
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="clear"></div>
+
+        </article>
+
+
+    </div>
+
+    <div id="secondary" class="grid_4 widget-area" role="complementary">
+
+        <aside id="wpltfb-2" class="widget WPlookCauses">
+            <div class="widget-title">
+                <h3>Say Hello!</h3>
+                <div class="clear"></div>
+            </div>
+
+            <div class="text-widget-body">
+
+                <address class="vcard">
+                    <p class="adr">
+                        <b>Street Name</b> -<span class="street-address"> 51 Sherbrook W. Montreal</span><br>
+                        <span class="region"> Quebec,</span>
+                        <span class="postal-code"> H4B H4Y,</span>
+                        <span class="country-name"> Canada,</span>
+                    </p>
+                    <b>Phone:</b><span class="tel"> +1 (514)456 7899</span><br />
+                    <b>E-mail:</b><span class="email"> {{ COMPANY_NAME }}@{{ COMPANY_NAME }}.com</span><br />
+                    <b>Website:</b><span class="url"> www.{{ COMPANY_NAME }}.com</span><br />
+                </address>
+
+            </div>
+        </aside>
+
+        <aside id="wpltfb3-2" class="widget WPlookCauses">
+            <div class="widget-title">
+                <h3>Events</h3>
+                <div class="viewall fright"><a href="{% url 'event.single' %}" class="radius" title="View all chauses">view all</a></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="widget-event-body">
+                <article class="event-item">
+                    <figure>
+                        <a title="Image title" href="{% url 'event.single' %}">
+                            <img width="272" height="150" src="{% static 'images/temp/272x150.jpg' %}" class="wp-post-image" alt="Image alt">
+                            <div class="mask radius">
+                                <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </figure>
+                    <h3 class="entry-header">
+                        <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'event.single' %}">Supporting a day centre</a>
+                    </h3>
+
+                    <div class="entry-meta-widget">
+                        <div class="date"><time datetime="2018-04-25T19:02:42+00:00"><i class="fa fa-calendar" aria-hidden="true"></i> July 10, 2018</time></div>
+                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">51 Sherbrooke W., Montreal</a></div>
+                        <div class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> <a href="#">Facebook</a></div>
+                    </div>
+
+                </article>
+
+            </div>
+        </aside>
+
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock content %}

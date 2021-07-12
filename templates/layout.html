@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+    <head>
+
+        <!--  Basic Page Needs -->
+        <meta charset="UTF-8" />
+        <title>{{ COMPANY_NAME }} / Foundation - HTML Theme</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/fontawesome/css/font-awesome.min.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/flexslider.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/keyframes.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/grid.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/meanmenu.css' %}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/custom.css' %}" />
+
+
+        <!-- Scripts -->
+        <script type='text/javascript' src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+
+        <!-- Scripts for plugins -->
+        <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+        <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/jquery.inview.js' %}"></script>
+        <script src="{% static 'js/jquery.scrollParallax.min.js' %}"></script>
+
+    </head>
+    <body class="home blog two-column right-sidebar" data-twttr-rendered="true">
+        <div id="page">
+
+            {% include 'includes/header-toolbar.html' %}
+
+            
+            {# header.html -- begin #}
+            {% include "includes/header.html" %}
+            {# header.html -- end #}
+
+            <!-- #masthead .site-header -->
+
+            <!-- Teaser / Slider - begin -->
+            {% block teaser %}
+            {# Use whichever block you need for whichever template #}
+            {% endblock teaser %}
+            <!-- Teaser / Slider - end -->
+            
+
+
+            <div id="main" class="site-main container_16">
+                
+                {% block content %}
+                
+                {% endblock content %}
+
+            </div>
+
+            <!-- Footer -->
+            {% include "includes/footer.html" %}
+            <!-- #colophon .site-footer -->
+
+        </div>
+        <!-- /#page -->
+    </body>
+</html>

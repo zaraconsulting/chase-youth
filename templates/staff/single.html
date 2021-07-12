@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block teaser %}
+    {% with title='Staff' %}
+        {% include "includes/breadcrumbs.html" %}
+    {% endwith %}
+{% endblock teaser %}
+
+{% block content %}
+<div class="inner">
+    <div id="primary" class="grid_11 suffix_1">
+        <article class="single">
+            <!-- First canditate -->
+            <div class="candidate radius grid_6">
+                <div class="candidate-margins">
+
+                    <img width="200" height="210" src="{% static 'images/temp/225x235.jpg' %}" class="wp-post-image" alt="Image alt">
+                    <div class="name">John Black</div>
+                    <div class="position">president</div>
+                    <div class="social-icons">
+                        <a class="fb radius" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a class="tw radius" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a class="pn radius" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a class="in radius" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a class="gp radius" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                        <a class="gh radius" href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a class="fl radius" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="candidate-about fright">
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui condimentum nibh eleifend consectetur id sed felis.</h3>
+                <br />
+                <p> Cras in elementum lorem. Aenean ornare lacinia tellus at dictum. Fusce dictum suscipit leo. Sed ipsum tellus, ultrices in molestie in, commodo id lorem. In arcu augue, ornare id porta ac, facilisis quis nisl. Ut nec odio lorem.
+
+                    Vivamus adipiscing metus fermentum, posuere tortor sit amet, interdum velit. Quisque malesuada neque odio, sit amet gravida lorem ornare nec. Donec euismod est sapien, quis gravida ipsum mattis quis. Nam pharetra molestie turpis nec sodales. Nulla sed risus auctor, feugiat nibh ac, fermentum ligula.Sed sed libero eros. Praesent laoreet enim sem, eu porta magna vulputate id. Sed convallis ut ligula vel aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed enim lacus. Integer eleifend vel metus non scelerisque. Phasellus volutpat eros enim, at faucibus nulla accumsan aliquet. Proin pulvinar sem est.
+                </p>
+            </div>
+
+            <div class="clear"></div>
+
+        </article>
+
+
+    </div>
+
+    <div id="secondary" class="grid_4 widget-area" role="complementary">
+
+        <aside id="wpltfb-2" class="widget WPlookCauses">
+            <div class="widget-title">
+                <h3>Latest Causes</h3>
+                <div class="viewall fright"><a href="#" class="radius" title="View all chauses">view all</a></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="widget-causes-body">
+
+                <article class="cause-item">
+                    <figure>
+                        <a title="Image title" href="02-causes-list.html">
+                            <img width="272" height="150" src="{% static 'images/temp/272x150.jpg' %}" class="wp-post-image" alt="Image alt">
+                            <div class="mask radius">
+                                <div class="mask-square"><i class="fa fa-tint" aria-hidden="true"></i></div>
+                            </div>
+                        </a>
+                    </figure>
+                    <h3 class="entry-header">
+                        <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="02-causes-list.html">Supporting a day centre</a>
+                    </h3>
+
+                    <div class="short-description">
+                        <p>Supporting 160 underprivileged children, mostly orphans and victims of HIV/AIDS, that visit daily the day centre: Centre Reborn for Hope. ALG finances feeding and education support.</p>
+                    </div>
+                </article>
+
+            </div>
+        </aside>
+
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock content %}

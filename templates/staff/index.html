@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block teaser %}
+    {% with title='Staff' %}
+        {% include "includes/breadcrumbs.html" %}
+    {% endwith %}
+{% endblock teaser %}
+
+{% block content %}
+<div class="inner">
+    <!-- Canditate -->
+    {% for s in staff %}
+    <div class="candidate radius grid_4">
+        <div class="candidate-margins">
+            <a href="{% url 'staff.single' %}">
+                <img width="200" height="210" src="{% static 'images/temp/225x235.jpg' %}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
+                <div class="name">{{ s.first_name }} {{ s.last_name }}</div>
+                <div class="position">{{ s.role }}</div>
+            </a>	
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Canditate -->
+    <div class="clear"></div>
+</div>
+{% endblock content %}
