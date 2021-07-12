@@ -25,4 +25,5 @@ urlpatterns = [
     path('contact/', views.contact, name='main.contact'),
     path('events/', include('events.urls')),
     path('staff/', include('staff.urls')),
+    path('news/', include('blog.urls'))
 ]

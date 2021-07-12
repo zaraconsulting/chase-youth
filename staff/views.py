@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Staff
 
 # Create your views here.
@@ -8,6 +8,9 @@ def index(request):
     }
     return render(request, 'staff/index.html', context)
 
-def single(request):
-    context = {}
+def single(request, slug):
+    staff = get_object_or_404(Staff, slug=slug)
+    context = {
+        's': staff
+    }
     return render(request, 'staff/single.html', context)

@@ -7,17 +7,8 @@
                 <aside id="meta-0" class="widget widget_adress">
                     <h3>Contact us</h3>
                     <address class="vcard">
-                        <p class="org vcard"><a class="url fn org" href="#">{{ COMPANY_NAME }} ONG</a>
-                        <p>
-                        <p class="adr">
-                            <b>Street Name</b> -<span class="street-address"> 51 Sherbrook W. Montreal</span><br>
-                            <span class="region"> Quebec,</span>
-                            <span class="postal-code"> H4B H4Y,</span>
-                            <span class="country-name"> Canada,</span>
-                        </p>
-                        <b>Phone:</b><span class="tel"> +1 (514)456 7899</span><br />
-                        <b>E-mail:</b><span class="email"> {{ COMPANY_NAME }}@{{ COMPANY_NAME }}.com</span><br />
-                        <b>Website:</b><span class="url"> www.{{ COMPANY_NAME }}.com</span><br />
+                        <p class="org vcard"><a class="url fn org" href="#">{{ COMPANY_NAME }}</a><p>
+                        <b>E-mail:</b><span class="email"> support@{{ COMPANY_NAME|lower }}.com</span><br />
                     </address>
                 </aside>
             </div>
@@ -27,10 +18,9 @@
                 <aside id="meta-1" class="widget widget_meta">
                     <h3>Latest Events</h3>
                     <ul>
-                        <li><a href="#">Social Networking</a></li>
-                        <li><a href="#" title="Silver Spring, WP Info Session June (Info Session)">Silver Spring, WP Info Session June</a></li>
-                        <li><a href="#" title="Silver Spring, WP Info Session October">Silver Spring, WP Info Session</a></li>
-                        <li><a href="#" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">Success Stories</a></li>
+                        {% for e in events %}
+                            <li><a href="{% url 'event.single' e.id %}" title="{{ e.title }}">{{ e.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </aside>
             </div>
@@ -40,9 +30,9 @@
                 <aside id="meta-2" class="widget widget_meta">
                     <h3>Get involved</h3>
                     <ul>
-                        <li><a href="#">The Big Give Team</a></li>
+                        <!--<li><a href="#">The Big Give Team</a></li>
                         <li><a href="#" title="Success Stories">Success Stories</a></li>
-                        <li><a href="#" title="Press">Press</a></li>
+                        <li><a href="#" title="Press">Press</a></li>-->
                         <li><a href="{% url 'main.contact' %}" title="Contact Us">Contact Us</a></li>
                     </ul>
                 </aside>
@@ -51,12 +41,12 @@
             <!-- Forth Widget Area -->
             <div class="grid_4">
                 <aside id="meta-3" class="widget widget_meta">
-                    <h3>Latest Tweets</h3>
+                    <h3>Latest News</h3>
                     <div class="latest-tweets-body">
-                        <a href="#">@viktoras</a> Thanks! We're always redesigning things around here :)
+                        <a href="#">Stay up to date by checking out our Facebook!
                     </div>
                     <div class="clear"></div>
-                    <div><a href="#" class="radius follow">Follow @wplook</a></div>
+                    <div><a target="blank" href="https://www.facebook.com/groups/ChaseYouth/" class="radius follow">Follow Us</a></div>
                 </aside>
             </div>
 
@@ -71,12 +61,12 @@
 
             <!-- CopyRight -->
             <div class="grid_8">
-                <p class="copy">Copyright © 2018. All Rights reserved. </p>
+                <p class="copy">Copyright © 2021. All Rights reserved. </p>
             </div>
 
             <!-- Design By -->
             <div class="grid_8">
-                <p class="designby">Designed by <a href="https://wplook.com">WPlook</a></p>
+                <p class="designby">Website by <a target="_blank" href="https://zaraconsulting.org">Zara Consulting, LLC</a></p>
             </div>
 
             <div class="clear"></div>

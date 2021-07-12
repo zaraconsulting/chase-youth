@@ -13,10 +13,12 @@
     {% for s in staff %}
     <div class="candidate radius grid_4">
         <div class="candidate-margins">
-            <a href="{% url 'staff.single' %}">
-                <img width="200" height="210" src="{% static 'images/temp/225x235.jpg' %}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
+            <a href="{% url 'staff.single' slug=s.slug %}">
+                {% if s.image %}
+                    <img width="200" height="210" src="{{ s.image.url }}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
+                {% endif %}
                 <div class="name">{{ s.first_name }} {{ s.last_name }}</div>
-                <div class="position">{{ s.role }}</div>
+                <div class="position">{% if s.role %}{{ s.role }}{% else %}Board Member{% endif %}</div>
             </a>	
         </div>
     </div>

@@ -15,10 +15,12 @@
             <div class="candidate radius grid_6">
                 <div class="candidate-margins">
 
-                    <img width="200" height="210" src="{% static 'images/temp/225x235.jpg' %}" class="wp-post-image" alt="Image alt">
-                    <div class="name">John Black</div>
-                    <div class="position">president</div>
-                    <div class="social-icons">
+                    {% if s.image %}
+                        <img width="200" height="210" src="{{ s.image.url }}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
+                    {% endif %}
+                    <div class="name">{{ s.first_name }}  {{ s.last_name }}</div>
+                    <div class="position">{% if s.role %}{{ s.role|lower }}{% else %}board member{% endif %}</div>
+                    <!--<div class="social-icons">
                         <a class="fb radius" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                         <a class="tw radius" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a class="pn radius" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
@@ -26,18 +28,15 @@
                         <a class="gp radius" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
                         <a class="gh radius" href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
                         <a class="fl radius" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
 
             <div class="candidate-about fright">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui condimentum nibh eleifend consectetur id sed felis.</h3>
+                <h3>{{ s.intro }}</h3>
                 <br />
-                <p> Cras in elementum lorem. Aenean ornare lacinia tellus at dictum. Fusce dictum suscipit leo. Sed ipsum tellus, ultrices in molestie in, commodo id lorem. In arcu augue, ornare id porta ac, facilisis quis nisl. Ut nec odio lorem.
-
-                    Vivamus adipiscing metus fermentum, posuere tortor sit amet, interdum velit. Quisque malesuada neque odio, sit amet gravida lorem ornare nec. Donec euismod est sapien, quis gravida ipsum mattis quis. Nam pharetra molestie turpis nec sodales. Nulla sed risus auctor, feugiat nibh ac, fermentum ligula.Sed sed libero eros. Praesent laoreet enim sem, eu porta magna vulputate id. Sed convallis ut ligula vel aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed enim lacus. Integer eleifend vel metus non scelerisque. Phasellus volutpat eros enim, at faucibus nulla accumsan aliquet. Proin pulvinar sem est.
-                </p>
+                <p>{{ s.bio }}</p>
             </div>
 
             <div class="clear"></div>

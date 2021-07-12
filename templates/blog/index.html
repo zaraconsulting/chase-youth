@@ -1,5 +1,107 @@
 {% extends "layout.html" %}
 {% load static %}
 
+{% block teaser %}
+    {% with title='News' %}
+        {% include "includes/breadcrumbs.html" %}
+    {% endwith %}
+{% endblock teaser %}
+
 {% block content %}
+<div class="inner">
+    <div id="primary" class="grid_11 suffix_1">
+
+        <!-- Event article -->
+        {% for n in news %}
+        <article class="list event">
+            <div class="short-content">
+                <figure>
+                    <a title="Image title" href="{% url 'blog.single' n.id %}" class="url summary">
+                        <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
+                        <div class="mask radius">
+                            <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
+                        </div>
+                    </a>
+                </figure>
+
+                <h1 class="entry-header">
+                    <a class="url summary" title="{{ n.title }}" href="{% url 'event.single' n.id %}">{{ n.title }}</a>
+                </h1>
+
+                <div class="short-description description">
+                    <p>{{ n.text|truncatechars:200 }}</p>
+                </div>
+
+                <div class="entry-meta">
+                    <time class="dtstart" datetime="{{ n.date_created }}">
+                        <a class="buttons time fleft" href="#">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> 
+                            {{ n.date_created|date:"M d, Y" }}
+                        </a>
+                    </time>
+                    {# <a class="buttons facebook fleft" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>  #}
+                    <a class="buttons fright" href="{% url 'event.single' e.id %}" title="Join us">Join us</a>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+        </article>
+        {% endfor %}
+        <!-- Event article -->
+
+        <!-- Pagination -->
+        <!--{% if events|length > 5 %}
+            <ul class="pagination">
+                <li><a class="active radius" href="#">1</a></li>
+                <li><a class="radius" href="#">2</a></li>
+                <li><a class="radius" href="#">3</a></li>
+                <li><a class="radius" href="#">4</a></li>
+                <li><a class="radius" href="#">5</a></li>
+            </ul>
+        {% endif %}-->
+
+    </div>
+
+    <div id="secondary" class="grid_4 widget-area" role="complementary">
+
+        <aside id="wpltfb-2" class="widget WPlookCauses">
+            <div class="widget-title">
+                <h3>Events</h3>
+                <div class="viewall fright"><a href="{% url 'event.index' when='all' %}" class="radius" title="View all chauses">view all</a></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="widget-event-body">
+
+                <!-- Event -->
+                <!-- {% for e in sidebar_events %}
+                    <article class="event-item">
+                        <figure>
+                            <a title="{{ e.title }}" href="">
+                                <img width="272" height="150" src="{{ e.image.url }}" class="wp-post-image" alt="{{ e.title }}">
+                                <div class="mask radius">
+                                    <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </figure>
+                        <h3 class="entry-header">
+                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'event.single' e.id %}">{{ e.title }}</a>
+                        </h3>
+
+                        <div class="entry-meta-widget">
+                            <div class="date"><time datetime="{{ e.date.date }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ e.date|date:"M d, Y" }}</time></div>
+                            {# <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">51 Sherbrooke W., Montreal</a></div> #}
+                            {# <div class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> <a href="#">Facebook</a></div> #}
+                        </div>
+
+                    </article>
+                {% endfor %} -->
+                <!-- Event -->
+            </div>
+        </aside>
+
+    </div>
+    <div class="clear"></div>
+</div>
 {% endblock content %}
