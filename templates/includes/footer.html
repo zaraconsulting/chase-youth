@@ -18,7 +18,7 @@
                 <aside id="meta-1" class="widget widget_meta">
                     <h3>Latest Events</h3>
                     <ul>
-                        {% for e in events %}
+                        {% for e in EVENTS %}
                             <li><a href="{% url 'event.single' e.id %}" title="{{ e.title }}">{{ e.title }}</a></li>
                         {% endfor %}
                     </ul>

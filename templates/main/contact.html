@@ -20,8 +20,8 @@
                 <br />
                 <!-- <h3>Book your place:</h3>
                 <br /> -->
-                <form action="processForm.php" id="contact-form" method="post">
-
+                <form action="{% url 'main.contact' %}" id="contact-form" method="post">
+                    {% csrf_token %}
                     <p>
                         <label for="contactName"></label>
                         <input class="radius" type="text" name="contactName" id="contactName" value="" placeholder="Name*" required />
