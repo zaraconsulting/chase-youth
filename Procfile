@@ -1,1 +1,1 @@
-web: gunicorn "iammedianation.wsgi"
+web: gunicorn "chase_youth.wsgi"
