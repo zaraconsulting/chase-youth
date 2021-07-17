@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from .settings import env
 
 from .import views
 
@@ -30,3 +31,7 @@ urlpatterns = [
     path('news/', include('blog.urls')),
     path('work/', include('works.urls'))
 ]
+
+admin.site.site_header = f"{env('COMPANY_NAME')} CMS"
+admin.site.site_title = f"{env('COMPANY_NAME')} CMS Portal"
+admin.site.index_title = f"Welcome to the {env('COMPANY_NAME')} CMS Portal"
