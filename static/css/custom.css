@@ -17,3 +17,96 @@
         width: 96%;
     }
 }
+
+.logo-info img {
+    width: 100px;
+    height: 100%;
+}
+
+/* #site-title { */
+
+/* position: relative;
+} */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+    /* border: 3px solid green; */
+}
+
+@media (max-width: 768px) {
+    #sticky_navigation .grid_5 {
+        width: unset;
+    }
+}
+
+/* MAILCHIMP FORM */
+
+/* Style the form - display items horizontally */
+
+.mailchimp-form-container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.mailchimp-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    /* margin: 0 auto; */
+}
+
+/* Add some margins for each label */
+
+.mailchimp-form label {
+    margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+
+.mailchimp-form input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    /* width: 20%; */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+
+.mailchimp-form button {
+    padding: 10px 20px;
+    background-color: #000;
+    /* border: 1px solid #ddd; */
+    color: white;
+}
+
+.mailchimp-form button:hover {
+    background-color: #e53b51;
+}
+
+.alert-box-container {
+    margin-top: 35px;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+
+@media (min-width: 641px) {
+    .mailchimp-form input {
+        width: 40%;
+    }
+}
+
+@media (max-width: 425px) {
+    .mailchimp-form input {
+        width: 100%;
+    }
+}
+
+/* MAILCHIMP FORM */

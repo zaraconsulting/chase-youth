@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='main.home'),
     path('contact/', views.contact, name='main.contact'),
+    path('about-us/', views.about, name='main.about'),
+    path('mailchimp/subscribe', views.mailchimp, name='main.mailchimp'),
     path('events/', include('events.urls')),
     path('staff/', include('staff.urls')),
     path('news/', include('blog.urls')),

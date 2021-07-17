@@ -115,8 +115,15 @@
         <aside id="wpltfbf-2" class="widget WPlookAnounce radius">
             <div class="announce-body mright mleft">
                 <div class="margin">
-                    <h1>Change Their World. Change Yours. This changes everything.</h1>
-                    <h3>A volunteer trip abroad with Cross-Cultural Solutions will change you. <br /> Change the way you see other cultures. Maybe even change how you live your life. </h3>
+                    <h1>We will keep you updated on all future programming!</h1>
+                    <div class="mailchimp-form-container">
+                        <form action="{% url 'main.mailchimp' %}" class="mailchimp-form" method="POST">
+                            {% csrf_token %}
+                            <input type="email" id="email" placeholder="Please subscribe to our email list" name="email">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <h3>Programs topics coming soon include: scholarships, mentoring, tutoring,<br /> financial planning workshops, mental health awareness, and much more!</h3>
                 </div>
             </div>
         </aside>

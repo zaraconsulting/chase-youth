@@ -60,6 +60,14 @@
 
 
             <div id="main" class="site-main container_16">
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert-box-container">
+                            <div class="alert {{ message.extra_tags }}">{{ message }}</div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
                 
                 {% block content %}
                 

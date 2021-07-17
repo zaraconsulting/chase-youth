@@ -2,8 +2,15 @@
     <div id="sticky_navigation">
         <div class="container_16">
             <hgroup class="fleft grid_5">
-                <h1 id="site-title"><a href="{% url 'main.home' %}" title="{{ COMPANY_NAME }} - Foundation" rel="home">{{ COMPANY_NAME }}</a></h1>
-                <h2 id="site-description">Company Slogan</h2>
+                <div class="logo-info">
+                    <!-- <h2 id="site-description">Company Slogan</h2> -->
+                    <h1 id="site-title">
+                        <div class="center">
+                            <img src="https://chase-youth.s3.amazonaws.com/logo/hero-image.png" alt="ChaseYouth">
+                            <a href="{% url 'main.home' %}" title="{{ COMPANY_NAME }} - Foundation" rel="home">{{ COMPANY_NAME }}</a>
+                        </div>
+                    </h1>
+                </div>
             </hgroup>
 
             <nav role="navigation" class="site-navigation main-navigation grid_11" id="site-navigation">

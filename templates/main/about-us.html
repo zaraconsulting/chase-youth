@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block teaser %}
+    {% with title='Our Story' %}
+        {% include "includes/breadcrumbs.html" %}
+    {% endwith %}
+{% endblock teaser %}
+
+{% block content %}
+<div class="inner">
+    <div id="primary" class="grid_11 suffix_1">
+        <article class="single">
+            <!-- First canditate -->
+            <div class="candidate radius grid_6">
+                <div class="candidate-margins">
+
+                    <img width="200" height="210" src="https://chase-youth.s3.amazonaws.com/about/about-us.jpg" class="wp-post-image" alt="Our Story">
+                    <!-- <div class="name">{{ s.first_name }}  {{ s.last_name }}</div>
+                    <div class="position">{% if s.role %}{{ s.role|lower }}{% else %}board member{% endif %}</div> -->
+                    <!--<div class="social-icons">
+                        <a class="fb radius" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a class="tw radius" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a class="pn radius" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a class="in radius" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a class="gp radius" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                        <a class="gh radius" href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a class="fl radius" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                    </div>-->
+
+                </div>
+            </div>
+
+            <div class="candidate-about fright">
+                <h3>Who We Are</h3>
+                <p>
+                    <strong>Mission</strong>: To provide scholarships for young people in underserved communities that will help them launch their dreams and fulfill their purpose.
+                </p>
+                <p>
+                    <strong>Vision</strong>: To pursue young people, launch dreams, and enhance underserved communities.
+                </p>
+                <p>
+                    <strong>Pillars</strong>: Education, Entrepreneurship, Mentorship, Civic Engagement, Wellness.
+                </p>
+                <p>From an early age our founder, Poshlyn Nicholson, knew that she had a passion for youth. That passion became a mission in 2006 after her cousin Paris Chase was murdered by Summit police. She realized that she wanted to create (and later name) a youth foundation in his honor. She held on to this dream throughout college and beyond where she had the opportunity to deepen her knowledge and experience by working with non-profit organizations such as YouthBuild Mclean County. ChaseYouth’s inaugural event was Poshlyn’s participation in the Chicago Half Marathon in 2019. She decided to use her love for running to raise funds for the organization. As a result, over $1,000 was raised and used to provide a scholarship to a high school senior and to award a grant to a black-owned business! This was only the beginning. Now, officially having Non-Profit status, ChaseYouth plans to change lives, “bridge the gap” and give opportunity by providing holistic services to young people in the areas of mental, physical, emotional, financial, spiritual, and social health.</p>
+                <p>ChaseYouth is honoring Paris Chase by providing opportunities to youth that sadly he never got the chance to live out. Paris was twenty-one when he was killed. A young man of many talents, he was actively pursuing music and entrepreneurship. Hence why ChaseYouth’s mission is to pursue young people, launch dreams, and shape communities.</p>
+            </div>
+
+            <div class="clear"></div>
+
+        </article>
+
+
+    </div>
+
+    <div id="secondary" class="grid_4 widget-area" role="complementary">
+
+        <aside id="wpltfb-2" class="widget WPlookCauses">
+            <div class="widget-title">
+                <h3>Latest News</h3>
+                <div class="clear"></div>
+            </div>
+
+            <div class="widget-event-body">
+                {% for n in news %}
+                    <article class="event-item">
+                        <figure>
+                            <a title="Image title" href="{% url 'blog.single' n.id %}">
+                                <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
+                                <div class="mask radius">
+                                    <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </figure>
+                        <h3 class="entry-header">
+                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'blog.single' n.id %}">{{ n.title }}</a>
+                        </h3>
+
+                        <div class="entry-meta-widget">
+                            <div class="date"><time datetime="2018-04-25T19:02:42+00:00"><i class="fa fa-calendar" aria-hidden="true"></i> {{ n.date_created|date:"M d, Y" }}</time></div>
+                            {# <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">51 Sherbrooke W., Montreal</a></div> #}
+                            {# <div class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> <a href="#">Facebook</a></div> #}
+                        </div>
+
+                    </article>
+                {% endfor %}
+            </div>
+        </aside>
+
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock content %}
