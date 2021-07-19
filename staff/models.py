@@ -18,3 +18,6 @@ class Staff(models.Model):
 
     def __repr__(self):
         return f'<Staff: {self.first_name} {self.last_name}>'
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
