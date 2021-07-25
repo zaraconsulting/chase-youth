@@ -12,8 +12,8 @@ from mailchimp_marketing.api_client import ApiClientError
 
 def home(request):
     context = {
-        'event': Event.objects.order_by('-date').all()[0],
-        'events': Event.objects.order_by('-date').all(),
+        'event': Event.objects.order_by('-date').first() if Event.objects.all() else [],
+        'events': Event.objects.order_by('-date').all() if Event.objects.all() else [],
         'news': Post.objects.order_by('-date_created').all()[:4],
         'works': Work.objects.all()
     }
@@ -36,8 +36,9 @@ def contact(request):
         )
         messages.success(request, "Your email have been received! We will be in touch with you shortly.", extra_tags='green')
         return redirect('main.contact')
+    
     context = {
-        'event': Event.objects.order_by('-date').all()[0]
+        'event': Event.objects.order_by('-date').first()
     }
     return render(request, 'main/contact.html', context)
 

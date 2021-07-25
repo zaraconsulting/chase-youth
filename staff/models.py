@@ -8,7 +8,11 @@ class Staff(models.Model):
     image = models.FileField(upload_to='staff', null=True, blank=True)
     role = models.CharField(max_length=50, null=True, blank=True)
     intro = models.TextField() 
-    bio = models.TextField()
+    bio1 = models.TextField()
+    bio2 = models.TextField(null=True, blank=True)
+    bio3 = models.TextField(null=True, blank=True)
+    bio4 = models.TextField(null=True, blank=True)
+    bio5 = models.TextField(null=True, blank=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
 
     def save(self, *args, **kwargs):

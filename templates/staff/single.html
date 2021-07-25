@@ -36,7 +36,11 @@
             <div class="candidate-about fright">
                 <h3>{{ s.intro }}</h3>
                 <br />
-                <p>{{ s.bio }}</p>
+                <p>{% if s.bio1 %}{{ s.bio1 }}{% endif %}</p>
+                <p>{% if s.bio2 %}{{ s.bio2 }}{% endif %}</p>
+                <p>{% if s.bio3 %}{{ s.bio3 }}{% endif %}</p>
+                <p>{% if s.bio4 %}{{ s.bio4 }}{% endif %}</p>
+                <p>{% if s.bio5 %}{{ s.bio5 }}{% endif %}</p>
             </div>
 
             <div class="clear"></div>
