@@ -16,7 +16,7 @@
             <!-- Second Widget Area -->
             <div class="grid_4">
                 <aside id="meta-1" class="widget widget_meta">
-                    <h3>Latest Events</h3>
+                    <h3>Latest events</h3>
                     <ul>
                         {% for e in EVENTS|slice:":5" %}
                             <li><a href="{% url 'event.single' e.id %}" title="{{ e.title }}">{{ e.title }}</a></li>
@@ -41,7 +41,7 @@
             <!-- Forth Widget Area -->
             <div class="grid_4">
                 <aside id="meta-3" class="widget widget_meta">
-                    <h3>Latest News</h3>
+                    <h3>Latest news</h3>
                     <div class="latest-tweets-body">
                         <a href="#">Stay up to date by checking out our Facebook!
                     </div>

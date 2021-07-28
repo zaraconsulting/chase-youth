@@ -15,6 +15,9 @@ class Staff(models.Model):
     bio5 = models.TextField(null=True, blank=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
 
+    class Meta:
+        verbose_name_plural = 'Staff Members'
+
     def save(self, *args, **kwargs):
         value = f'{self.first_name} {self.last_name}'.replace(' ', '-').lower()
         self.slug = slugify(value, allow_unicode=True)

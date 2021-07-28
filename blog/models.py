@@ -15,6 +15,9 @@ from django.utils.text import slugify
 class Category(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
+
+    class Meta:
+        verbose_name_plural = 'Post Categories'
         
     def save(self, *args, **kwargs):
         value = self.name
@@ -71,6 +74,9 @@ class Comment(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
+    class Meta:
+        verbose_name_plural = 'Post Comments'
+
     def to_dict(self):
         data = {
             'id': self.id,
@@ -94,6 +100,9 @@ class Tag(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(default='', editable=False, max_length=200)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Post Tags'
         
     def save(self, *args, **kwargs):
         value = self.name
