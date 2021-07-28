@@ -1,3 +1,4 @@
+from about.models import About
 from django.shortcuts import render, redirect
 from events.models import Event
 from blog.models import Post
@@ -22,6 +23,7 @@ def home(request):
 def about(request):
     context = {
         'news': Post.objects.order_by('-date_created').all()[:4],
+        'about': About.objects.all().first()
     }
     return render(request, 'main/about-us.html', context)
 

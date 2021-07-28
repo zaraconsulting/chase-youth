@@ -34,18 +34,21 @@
             <div class="candidate-about fright">
                 <h3>Who Are We</h3>
                 <p>
-                    <strong>Mission</strong>: To provide scholarships for young people in underserved communities that will help them launch their dreams and fulfill their purpose.
+                    <strong>{{ about.title1 }}</strong>: {{ about.description1 }}
                 </p>
                 <p>
-                    <strong>Vision</strong>: To pursue young people, launch dreams, and enhance underserved communities.
+                    <strong>{{ about.title2 }}</strong>: {{ about.description2 }}
                 </p>
                 <p>
-                    <strong>Pillars</strong>: Education, Entrepreneurship, Mentorship, Civic Engagement, Wellness.
+                    <strong>{{ about.title3 }}</strong>: {{ about.description3 }}
                 </p>
 
                 <h3>Our Story</h3>
-                <p>From an early age our founder, Poshlyn Nicholson, knew that she had a passion for youth. That passion became a mission in 2006 after her cousin Paris Chase was murdered by Summit police. She realized that she wanted to create (and later name) a youth foundation in his honor. She held on to this dream throughout college and beyond where she had the opportunity to deepen her knowledge and experience by working with non-profit organizations such as YouthBuild Mclean County. ChaseYouth’s inaugural event was Poshlyn’s participation in the Chicago Half Marathon in 2019. She decided to use her love for running to raise funds for the organization. As a result, over $1,000 was raised and used to provide a scholarship to a high school senior and to award a grant to a black-owned business! This was only the beginning. Now, officially having Non-Profit status, ChaseYouth plans to change lives, “bridge the gap” and give opportunity by providing holistic services to young people in the areas of mental, physical, emotional, financial, spiritual, and social health.</p>
-                <p>ChaseYouth is honoring Paris Chase by providing opportunities to youth that sadly he never got the chance to live out. Paris was twenty-one when he was killed. A young man of many talents, he was actively pursuing music and entrepreneurship. Hence why ChaseYouth’s mission is to pursue young people, launch dreams, and shape communities.</p>
+                {% if about.story_description1 %}<p>{{ about.story_description1 }}</p>{% endif %}
+                {% if about.story_description2 %}<p>{{ about.story_description2 }}</p>{% endif %}
+                {% if about.story_description3 %}<p>{{ about.story_description3 }}</p>{% endif %}
+                {% if about.story_description4 %}<p>{{ about.story_description4 }}</p>{% endif %}
+                {% if about.story_description5 %}<p>{{ about.story_description5 }}</p>{% endif %}
             </div>
 
             <div class="clear"></div>

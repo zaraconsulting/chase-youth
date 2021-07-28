@@ -9,10 +9,10 @@ class About(models.Model):
     title3 = models.CharField(max_length=50)
     description3 = models.TextField()
     story_description1 = models.TextField()
-    story_description2 = models.TextField()
-    story_description3 = models.TextField()
-    story_description4 = models.TextField()
-    story_description5 = models.TextField()
+    story_description2 = models.TextField(null=True, blank=True)
+    story_description3 = models.TextField(null=True, blank=True)
+    story_description4 = models.TextField(null=True, blank=True)
+    story_description5 = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Content'
@@ -20,4 +20,4 @@ class About(models.Model):
         
 
     def __str__(self):
-        return f'{self.title1}: {self.description1}\n{self.title2}: {self.description2}\n{self.title3}: {self.description3}'
+        return "Click here to manage the content on the 'About Us' page"
