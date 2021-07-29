@@ -1,3 +1,4 @@
+from announcement.models import Announcement
 from about.models import About
 from django.shortcuts import render, redirect
 from events.models import Event
@@ -16,7 +17,8 @@ def home(request):
         'event': Event.objects.order_by('-date').first() if Event.objects.all() else [],
         'events': Event.objects.order_by('-date').all() if Event.objects.all() else [],
         'news': Post.objects.order_by('-date_created').all()[:4],
-        'works': Work.objects.all()
+        'works': Work.objects.all(),
+        'announcement': Announcement.objects.first(),
     }
     return render(request, 'main/home.html', context)
 
