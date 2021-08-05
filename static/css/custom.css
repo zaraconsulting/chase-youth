@@ -103,6 +103,12 @@
     }
 }
 
+@media (max-width: 640px) {
+    #main #secondary.grid_4.widget-area {
+        display: none;
+    }
+}
+
 @media (max-width: 425px) {
     .mailchimp-form input {
         width: 100%;
@@ -128,8 +134,10 @@
 /* HEADER TOOLBAR */
 
 /* HEADER */
+
 #site-title.header-logo a {
     font-size: 3rem;
     /* text-decoration: none; */
 }
+
 /* HEADER */
