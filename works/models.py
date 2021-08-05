@@ -13,6 +13,10 @@ class Work(models.Model):
     description_5 = models.TextField(null=True, blank=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
 
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = 'News'
+
     def to_dict(self):
         data = {
             'id': self.id,
