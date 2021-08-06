@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'chase-youth.herokuapp.com
 # Application definition
 
 INSTALLED_APPS = [
+    'colorfield',
     'storages',
     'announcement.apps.AnnouncementConfig',
     'about.apps.AboutConfig',

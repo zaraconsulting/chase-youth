@@ -95,6 +95,10 @@
     margin-top: 35px;
 }
 
+#teaser .flex-button > a.radius:hover {
+    color: #FFFFFF !important;
+}
+
 /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
 
 @media (min-width: 641px) {
@@ -110,3 +114,26 @@
 }
 
 /* MAILCHIMP FORM */
+
+/* HEADER TOOLBAR */
+
+#toolbar ul .rss a, #toolbar ul .contact a, #toolbar ul .share a, #toolbar ul .search a {
+    width: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (max-width: 480px) {
+    #toolbar ul .donate {
+        display: unset !important;
+    }
+}
+
+/* HEADER TOOLBAR */
+
+/* HEADER */
+#site-title.header-logo a {
+    font-size: 3rem;
+    /* text-decoration: none; */
+}
+/* HEADER */
