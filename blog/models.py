@@ -27,9 +27,15 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.name}' 
 
+# class PostTitleFontSize(models.Model):
+#     value = models.CharField(max_length=3)
+
+#     def __str__(self):
+#         return f'Font Size Value: {self.value}'
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
+    # font_size = models.ForeignKey(PostTitleFontSize, on_delete=models.CASCADE)
     # email = models.CharField(max_length=200)
     image_display = models.FileField(upload_to='blog/post')
     image = models.FileField(upload_to='blog/post')
