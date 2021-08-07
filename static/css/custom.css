@@ -119,6 +119,14 @@
     min-width: 100%;
 }
 
+.announcement-description {
+    margin-top: 10px;
+}
+
+.announce-body button {
+    margin-top: 10px;
+}
+
 @media (max-width: 640px) {
     #secondary .widget figure img {
         object-fit: cover;
@@ -127,6 +135,11 @@
         min-width: 100%;
         /* width: 272px; */
     }
+}
+
+.forth-home-widget-area {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */

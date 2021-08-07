@@ -19,7 +19,7 @@
                     <h3>Latest events</h3>
                     <ul>
                         {% for e in EVENTS|slice:":5" %}
-                            <li><a href="{% url 'event.single' e.id %}" title="{{ e.title }}">{{ e.title }}</a></li>
+                            <li><a href="{% url 'event.single' e.id %}" title="{{ e.title }}">{{ e.title|truncatechars:30 }}</a></li>
                         {% endfor %}
                     </ul>
                 </aside>
