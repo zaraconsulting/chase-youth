@@ -1,10 +1,12 @@
 from django.contrib import admin
-from .models import Work, WorkTitleFontColor, WorkTitleFontSize
+from .models import Work, TitleFontColor, TitleFontSize, ExcerptFontColor, ExcerptFontSize
 
 class WorksAdmin(admin.ModelAdmin):
-    fields = ('title', 'work_title_font_size', 'work_title_font_color')
+    fields = ('title', 'title_font_size', 'title_font_color', 'excerpt', 'excerpt_font_size', 'excerpt_font_color')
 
 # Register your models here.
 admin.site.register(Work, WorksAdmin)
-admin.site.register(WorkTitleFontSize)
-admin.site.register(WorkTitleFontColor)
+admin.site.register(TitleFontSize)
+admin.site.register(TitleFontColor)
+admin.site.register(ExcerptFontSize)
+admin.site.register(ExcerptFontColor)
