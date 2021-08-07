@@ -9,6 +9,8 @@
     object-fit: contain;
 } */
 
+/* #main .inner {} */
+
 @media screen and (max-width:425px) {
     #contact-form input, #contact-form textarea {
         width: 90%;
@@ -93,6 +95,51 @@
 
 .alert-box-container {
     margin-top: 35px;
+}
+
+#teaser .flex-button>a.radius:hover {
+    color: #FFFFFF !important;
+    border: 1px solid #fff;
+}
+
+/* #secondary .widget figure img, .second-home-widget-area .widget figure img { */
+
+#secondary .widget figure img {
+    object-fit: cover;
+    object-position: 0 0;
+    height: 150px;
+    width: 272px;
+}
+
+/* min-width: 100%; */
+
+#primary article figure img {
+    object-fit: cover;
+    object-position: 0 7%;
+    min-width: 100%;
+}
+
+.announcement-description {
+    margin-top: 10px;
+}
+
+.announce-body button {
+    margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+    #secondary .widget figure img {
+        object-fit: cover;
+        object-position: 0 0;
+        height: 300px;
+        min-width: 100%;
+        /* width: 272px; */
+    }
+}
+
+.forth-home-widget-area {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */

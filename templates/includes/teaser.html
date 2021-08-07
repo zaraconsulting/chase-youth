@@ -9,9 +9,9 @@
                     <div class="flex-caption ">
                         <div class="flex-content container_16">
                             <div class="grid_16">
-                                <h1>{{ w.title }}</h1>
-                                <h2>{{ w.excerpt|truncatechars:100 }}</h2>
-                                <div class="flex-button"><a class="radius" href="{% url 'works.single' slug=w.slug %}">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                                <h1 style="color: {{ w.title_font_color }}; font-size: {{ w.title_font_size }}px;">{{ w.title }}</h1>
+                                <h2 style="font-size: {{ w.excerpt_font_size }}px; color: {{ w.title_font_color }}">{{ w.excerpt|truncatechars:100 }}</h2>
+                                <div class="flex-button"><a style="border: 1px solid {{ w.excerpt_font_color }}; color: {{ w.excerpt_font_color }}" class="radius" href="{% url 'works.single' slug=w.slug %}">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>

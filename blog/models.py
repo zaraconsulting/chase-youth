@@ -27,12 +27,6 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.name}' 
 
-# class PostTitleFontSize(models.Model):
-#     value = models.CharField(max_length=3)
-
-#     def __str__(self):
-#         return f'Font Size Value: {self.value}'
-
 class Post(models.Model):
     title = models.CharField(max_length=200)
     # font_size = models.ForeignKey(PostTitleFontSize, on_delete=models.CASCADE)
@@ -43,7 +37,7 @@ class Post(models.Model):
     is_featured = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     # user = models.ForeignKey(User, on_delete=models.CASCADE) 
-    category = models.ForeignKey(Category , on_delete=models.CASCADE) 
+    category = models.ForeignKey(Category, on_delete=models.CASCADE) 
     slug = models.SlugField(default='', editable=False, max_length=200)
 
 

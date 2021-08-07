@@ -95,6 +95,10 @@
     margin-top: 35px;
 }
 
+#teaser .flex-button > a.radius:hover {
+    color: #FFFFFF !important;
+}
+
 /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
 
 @media (min-width: 641px) {

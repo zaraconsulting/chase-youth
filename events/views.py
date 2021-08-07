@@ -23,6 +23,7 @@ def single(request, event_id):
     e = get_object_or_404(Event, id=event_id)
     context = {
         'e': e.to_dict(),
-        'upcoming_events': [i for i in Event.objects.order_by('date').all() if not i.is_complete][:5]
+        'upcoming_events': [i for i in Event.objects.order_by('date').all() if not i.is_complete][:5],
+        'referrer': 'event.index'
     }
     return render(request, 'events/single.html', context)
