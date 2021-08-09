@@ -3,15 +3,6 @@ from datetime import datetime as dt
 from django.utils.text import slugify
 
 # Create your models here.
-# class User(models.Model):
-#     first_name = models.CharField(max_length=200)
-#     last_name = models.CharField(max_length=200)
-#     email = models.CharField(max_length=200)
-#     date_created = models.DateTimeField(max_length=200)
-
-#     def __str__(self):
-#         return f'[{self.email}] {self.first_name} {self.last_name}' 
-
 class Category(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
@@ -29,14 +20,11 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    # font_size = models.ForeignKey(PostTitleFontSize, on_delete=models.CASCADE)
-    # email = models.CharField(max_length=200)
-    image_display = models.FileField(upload_to='blog/post')
+    # image_display = models.FileField(upload_to='blog/post')
     image = models.FileField(upload_to='blog/post')
     text = models.TextField()
     is_featured = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE) 
     category = models.ForeignKey(Category, on_delete=models.CASCADE) 
     slug = models.SlugField(default='', editable=False, max_length=200)
 
@@ -45,13 +33,11 @@ class Post(models.Model):
         data = {
             'id': self.id,
             'title': self.title,
-            # 'email': self.email,
             'text': self.text,
             'date': {
                 'timestamp': self.date_created,
                 'display': dt.strftime(self.date_created, '%b %-d %Y, %-I:%-M %p')
             },
-            # 'user': self.user,
             'category': self.category,
             'slug': self.slug,
         }

@@ -104,7 +104,7 @@
 
 /* #secondary .widget figure img, .second-home-widget-area .widget figure img { */
 
-#secondary .widget figure img {
+#secondary .widget figure img, .second-home-widget-area figure img {
     object-fit: cover;
     object-position: 0 0;
     height: 150px;

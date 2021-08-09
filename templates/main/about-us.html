@@ -70,7 +70,7 @@
                 {% for n in news %}
                     <article class="event-item">
                         <figure>
-                            <a title="Image title" href="{% url 'blog.single' n.id %}">
+                            <a title="{{ n.title }}" href="{% url 'blog.single' n.id %}">
                                 <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
                                 <div class="mask radius">
                                     <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
