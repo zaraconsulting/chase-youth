@@ -108,7 +108,7 @@
     object-fit: cover;
     object-position: 0 0;
     height: 150px;
-    width: 272px;
+    /* width: 100%; */
 }
 
 /* min-width: 100%; */
@@ -116,7 +116,7 @@
 #primary article figure img {
     object-fit: cover;
     object-position: 0 7%;
-    min-width: 100%;
+    /* min-width: 100%; */
 }
 
 .announcement-description {
