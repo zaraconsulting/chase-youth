@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block teaser %}
-    {% with title='Event' %}
+    {% with title='News' %}
         {% include "includes/breadcrumbs.html" %}
     {% endwith %}
 {% endblock teaser %}
@@ -101,7 +101,7 @@
         <aside id="wpltfb-2" class="widget WPlookCauses">
             <div class="widget-title">
                 <h3>Recent News</h3>
-                <div class="viewall fright"><a href="{% url 'event.index' when='upcoming' %}" class="radius" title="View all chauses">view all</a></div>
+                <div class="viewall fright"><a href="{% url 'event.index' when='upcoming' %}" class="radius" title="View all news">view all</a></div>
                 <div class="clear"></div>
             </div>
 

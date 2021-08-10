@@ -16,8 +16,9 @@
 
                 {% if s %}
                     <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ s.first_name }} {{ s.last_name }}</span>
-                {% endif %}
-                {% if e %}
+                {% elif n %}
+                    <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ n.title|truncatechars:250|title }}</span>
+                {% elif e %}
                     <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ e.title|truncatechars:250|title }}</span>
                 {% endif %}
 

@@ -16,7 +16,7 @@
         <article class="list event">
             <div class="short-content">
                 <figure>
-                    <a title="{{ n.title }}" href="{% url 'blog.single' n.id %}" class="url summary">
+                    <a title="{{ n.title }}" href="{% url 'blog.single' n.slug %}" class="url summary">
                         <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
                         <div class="mask radius">
                             <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
@@ -25,7 +25,7 @@
                 </figure>
 
                 <h1 class="entry-header">
-                    <a class="url summary" title="{{ n.title }}" href="{% url 'event.single' n.id %}">{{ n.title }}</a>
+                    <a class="url summary" title="{{ n.title }}" href="{% url 'blog.single' n.slug %}">{{ n.title }}</a>
                 </h1>
 
                 <div class="short-description description">
@@ -39,8 +39,8 @@
                             {{ n.date_created|date:"M d, Y" }}
                         </a>
                     </time>
-                    {# <a class="buttons facebook fleft" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>  #}
-                    <a class="buttons fright" href="{% url 'event.single' e.id %}" title="Join us">Join us</a>
+                    {# <a class="buttons facebook fleft" href="javascript:void(0)"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>  #}
+                    <a class="buttons fright" href="{% url 'blog.single' n.slug %}" title="Read more">Read More</a>
                 </div>
                 <div class="clear"></div>
 
@@ -68,14 +68,14 @@
         <aside id="wpltfb-2" class="widget WPlookCauses">
             <div class="widget-title">
                 <h3>Events</h3>
-                <div class="viewall fright"><a href="{% url 'event.index' when='all' %}" class="radius" title="View all chauses">view all</a></div>
+                <div class="viewall fright"><a href="{% url 'event.index' when='all' %}" class="radius" title="View all events">view all</a></div>
                 <div class="clear"></div>
             </div>
 
             <div class="widget-event-body">
 
                 <!-- Event -->
-                <!-- {% for e in sidebar_events %}
+                {% for e in sidebar_events %}
                     <article class="event-item">
                         <figure>
                             <a title="{{ e.title }}" href="">
@@ -96,7 +96,7 @@
                         </div>
 
                     </article>
-                {% endfor %} -->
+                {% endfor %}
                 <!-- Event -->
             </div>
         </aside>

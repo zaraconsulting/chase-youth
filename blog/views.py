@@ -1,3 +1,4 @@
+from events.models import Event
 from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.http import Http404
 from .models import Post, Tag, Category, Comment
@@ -5,8 +6,9 @@ from .models import Post, Tag, Category, Comment
 # Create your views here.
 def index(request):
     context = {
-        'posts': Post.objects.order_by('-date_created'),
-        'categories': Category.objects.order_by('name'),
+        'news': Post.objects.order_by('-date_created').all(),
+        'categories': Category.objects.order_by('name').all(),
+        'sidebar_events': [i for i in Event.objects.order_by('-created_on').all()][:5]
     }
     return render(request, 'blog/index.html', context)
 
