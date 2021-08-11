@@ -2,11 +2,17 @@ from django.db import models
 from django.utils.text import slugify
 
 # Create your models here.
+class StaffRole(models.Model):
+    rank = models.IntegerField()
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.name}'
+
 class Staff(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     image = models.FileField(upload_to='staff', null=True, blank=True)
-    role = models.CharField(max_length=50, null=True, blank=True)
     intro = models.TextField() 
     bio1 = models.TextField()
     bio2 = models.TextField(null=True, blank=True)
@@ -14,6 +20,7 @@ class Staff(models.Model):
     bio4 = models.TextField(null=True, blank=True)
     bio5 = models.TextField(null=True, blank=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
+    staff_role = models.ForeignKey(StaffRole, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Staff Members'

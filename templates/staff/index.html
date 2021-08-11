@@ -18,7 +18,7 @@
                     <img width="200" height="210" src="{{ s.image.url }}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
                 {% endif %}
                 <div class="name">{{ s.first_name }} {{ s.last_name }}</div>
-                <div class="position">{% if s.role %}{{ s.role }}{% else %}Board Member{% endif %}</div>
+                <div class="position">{{ s.staff_role.name }}</div>
             </a>	
         </div>
     </div>
