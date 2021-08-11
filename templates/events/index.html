@@ -16,16 +16,16 @@
         <article class="list event">
             <div class="short-content">
                 <figure>
-                    <a title="{{ e.title }}" href="{% url 'event.single' e.id %}" class="url summary">
+                    <a title="{{ e.title }}" href="{% url 'event.single' e.slug %}" class="url summary">
                         <img width="272" height="150" src="{{ e.image.url }}" class="wp-post-image" alt="{{ e.title }}">
                         <div class="mask radius">
-                            <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
+                            <!-- <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div> -->
                         </div>
                     </a>
                 </figure>
 
                 <h1 class="entry-header">
-                    <a class="url summary" title="{{ e.title }}" href="{% url 'event.single' e.id %}">{{ e.title }}</a>
+                    <a class="url summary" title="{{ e.title }}" href="{% url 'event.single' e.slug %}">{{ e.title }}</a>
                 </h1>
 
                 <div class="short-description description">
@@ -34,13 +34,13 @@
 
                 <div class="entry-meta">
                     <time class="dtstart" datetime="{{ e.date }}">
-                        <a class="buttons time fleft" href="{% url 'event.single' e.id %}">
+                        <a class="buttons time fleft" href="{% url 'event.single' e.slug %}">
                             <i class="fa fa-calendar" aria-hidden="true"></i> 
                             {{ e.date|date:"M d, Y" }}
                         </a>
                     </time>
                     {# <a class="buttons facebook fleft" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>  #}
-                    <a class="buttons fright" href="{% url 'event.single' e.id %}" title="Join us">Read more</a>
+                    <a class="buttons fright" href="{% url 'event.single' e.slug %}" title="Join us">Read more</a>
                 </div>
                 <div class="clear"></div>
 
@@ -78,7 +78,7 @@
                 {% for e in sidebar_events %}
                     <article class="event-item">
                         <figure>
-                            <a title="{{ e.title }}" href="">
+                            <a title="{{ e.title }}" href="{% url 'event.single' e.slug %}">
                                 <img width="272" height="150" src="{{ e.image.url }}" class="wp-post-image" alt="{{ e.title }}">
                                 <div class="mask radius">
                                     <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
@@ -86,7 +86,7 @@
                             </a>
                         </figure>
                         <h3 class="entry-header">
-                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'event.single' e.id %}">{{ e.title }}</a>
+                            <a title="Change a Life Through Education" href="{% url 'event.single' e.slug %}">{{ e.title }}</a>
                         </h3>
 
                         <div class="entry-meta-widget">

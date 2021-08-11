@@ -113,7 +113,7 @@
                 {% for e in upcoming_events %}
                     <article class="event-item">
                         <figure>
-                            <a title="{{ e.title }}" href="{% url 'event.single' e.id %}">
+                            <a title="{{ e.title }}" href="{% url 'event.single' e.slug %}">
                                 <img width="272" height="150" src="{{ e.image.url }}" class="wp-post-image" alt="{{ e.title }}">
                                 <div class="mask radius">
                                     <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
@@ -121,7 +121,7 @@
                             </a>
                         </figure>
                         <h3 class="entry-header">
-                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'event.single' e.id %}">{{ e.title }}</a>
+                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'event.single' e.slug %}">{{ e.title }}</a>
                         </h3>
 
                         <div class="entry-meta-widget">

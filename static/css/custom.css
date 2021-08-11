@@ -109,6 +109,7 @@ aside article figure {
 
 aside article figure img, .widget-area figure img {
     object-fit: cover;
+    object-position: 0 0;
     height: 100%;
 }
 
@@ -126,13 +127,9 @@ aside article figure img, .widget-area figure img {
         object-position: 0 0;
         height: 300px;
         min-width: 100%;
-        /* width: 272px; */
-
 }
-
-}
-
-*/ .forth-home-widget-area {
+*/ 
+.forth-home-widget-area {
     padding-bottom: 0;
     margin-bottom: 0;
 }

@@ -19,8 +19,8 @@ def index(request, when=None):
     }
     return render(request, 'events/index.html', context)
 
-def single(request, event_id):
-    e = get_object_or_404(Event, id=event_id)
+def single(request, slug):
+    e = get_object_or_404(Event, slug=slug)
     context = {
         'e': e.to_dict(),
         'upcoming_events': [i for i in Event.objects.order_by('date').all() if not i.is_complete][:5],
