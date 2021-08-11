@@ -25,7 +25,7 @@
                                 <div class="content fleft">
                                     <h3>{{ n.title }}</h3>
                                     <p class="category">{{ n.category }}</p>
-                                    <p class="description">{{ n.text|truncatechars:250 }}</p>
+                                    <p class="description">{{ n.text1|truncatechars:250 }}</p>
                                     <div class="flex-button-red"><a class="radius" href="{% url 'blog.single' n.slug %}">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
                                 </div>
                                 <div class="clear"></div>
@@ -51,7 +51,7 @@
             <div class="widget-event-body">
                 <article class="event-item">
                     <figure>
-                        <a title="{{ event.title }}" href="{% url 'event.single' event.id %}">
+                        <a title="{{ event.title }}" href="{% url 'event.single' event.slug %}">
                             <img width="272" height="150" src="{{ event.image.url }}" class="wp-post-image" alt="{{ event.title }}">
                             <div class="mask radius">
                                 <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
@@ -59,7 +59,7 @@
                         </a>
                     </figure>
                     <h3 class="entry-header">
-                        <a title="{{ event.title }}" href="{% url 'event.single' event.id %}">{{ event.title }}</a>
+                        <a title="{{ event.title }}" href="{% url 'event.single' event.slug %}">{{ event.title }}</a>
                     </h3>
 
                     <div class="entry-meta-widget">
@@ -100,7 +100,7 @@
                         </h3>
 
                         <div class="short-description">
-                            <p>{{ n.text|truncatechars:150 }}</p>
+                            <p>{{ n.text1|truncatechars:150 }}</p>
                         </div>
                     </article>
                 {% endfor %}

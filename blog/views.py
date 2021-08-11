@@ -37,7 +37,7 @@ def single(request, slug):
     #             has_prev = True
     n = get_object_or_404(Post, slug=slug)
     context = {
-        'n': n,
+        'n': n.to_dict(),
         'news': [i for i in Post.objects.order_by('-date_created').all() if i != n]
         # 'post': post.to_dict(),
         # 'tags': [t for t in Tag.objects.all() if t.post.id == post.id],

@@ -16,7 +16,7 @@ def home(request):
     context = {
         'event': Event.objects.order_by('-date').first() if Event.objects.all() else [],
         'events': Event.objects.order_by('-date').all() if Event.objects.all() else [],
-        'news': Post.objects.order_by('-date_created').all()[:4],
+        'news': [p.to_dict() for p in Post.objects.order_by('-date_created').all()[:4]],
         'works': Work.objects.all(),
         'announcement': Announcement.objects.first(),
     }

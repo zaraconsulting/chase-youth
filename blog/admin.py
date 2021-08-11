@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     fields = ('name',)
 
 class PostAdmin(admin.ModelAdmin):
-    fields = ('title', 'category', 'image', 'is_featured', 'text')
+    fields = ('title', 'category', 'image', 'is_featured', 'text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'date_created')
 
 # Register your models here.
 # admin.site.register(User)

@@ -16,8 +16,8 @@
             <div class="event-info radius">
 
                 <div class="month-time fleft">
-                    <span class="day fleft">{{ n.date_created|date:"d" }}</span>
-                    <span class="month">{{ n.date_created|date:"M, Y" }}</span><br />
+                    <span class="day fleft">{{ n.date.timestamp|date:"d" }}</span>
+                    <span class="month">{{ n.date.timestamp|date:"M, Y" }}</span><br />
                     <!-- <span class="stime"><strong>{{ n.date_created|date:"i:M p" }}</strong></span> -->
                 </div>
 
@@ -80,7 +80,9 @@
                 <div class="long-description">
                     <h3>{{ n.title }}</h3>
                     <br />
-                    <p>{{ n.text }}</p>
+                    {% for t in n.text %}
+                        <p>{{ t }}</p>
+                    {% endfor %}
                 </div>
 
 

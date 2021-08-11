@@ -22,7 +22,13 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     # image_display = models.FileField(upload_to='blog/post')
     image = models.FileField(upload_to='blog/post')
-    text = models.TextField()
+    text1 = models.TextField(null=True, blank=True)
+    text2 = models.TextField(null=True, blank=True)
+    text3 = models.TextField(null=True, blank=True)
+    text4 = models.TextField(null=True, blank=True)
+    text5 = models.TextField(null=True, blank=True)
+    text6 = models.TextField(null=True, blank=True)
+    text7 = models.TextField(null=True, blank=True)
     is_featured = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE) 
@@ -32,8 +38,17 @@ class Post(models.Model):
     def to_dict(self):
         data = {
             'id': self.id,
+            'image': self.image,
             'title': self.title,
-            'text': self.text,
+            'text1': self.text1,
+            'text2': self.text2,
+            'text3': self.text3,
+            'text4': self.text4,
+            'text5': self.text5,
+            'text6': self.text6,
+            'text7': self.text7,
+            'text': [self.text1, self.text2, self.text3, self.text4, self.text5, self.text6, self.text7],
+            'is_featured': self.is_featured,
             'date': {
                 'timestamp': self.date_created,
                 'display': dt.strftime(self.date_created, '%b %-d %Y, %-I:%-M %p')
