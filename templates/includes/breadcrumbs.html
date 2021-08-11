@@ -11,13 +11,15 @@
                 {% if referrer %}
                     <a href="{% if e %} {% url referrer when='upcoming' %} {% else %} {% url referrer %} {% endif %}"><span class="current">{{ title }}</span></a>
                 {% else %}
-                    <span class="current">{{ title }}</span>
+                    <span class="current">{% if w %}{{ w.title }}{% else %}{{ title }}{% endif %}</span>
                 {% endif %}
 
                 {% if s %}
                     <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ s.first_name }} {{ s.last_name }}</span>
                 {% elif n %}
                     <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ n.title|truncatechars:250|title }}</span>
+                {# {% elif w %} #}
+                    {# <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ w.title|truncatechars:250|title }}</span> #}
                 {% elif e %}
                     <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="current">{{ e.title|truncatechars:250|title }}</span>
                 {% endif %}

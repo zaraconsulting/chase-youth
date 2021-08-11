@@ -7,6 +7,7 @@ def single(request, slug):
     w = get_object_or_404(Work, slug=slug)
     context = {
         'w': w.to_dict(),
-        'news': Post.objects.order_by('-date_created').all()
+        'news': Post.objects.order_by('-date_created').all(),
+        # 'referrer': 'works.index'
     }
     return render(request, 'works/single.html', context)

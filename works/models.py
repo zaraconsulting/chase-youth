@@ -65,6 +65,7 @@ class Work(models.Model):
             'image': self.image,
             'excerpt': self.excerpt,
             'descriptions': [self.description_1, self.description_2, self.description_3, self.description_4, self.description_5],
+            'slug': self.slug,
         }
         return data
 

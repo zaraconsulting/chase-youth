@@ -54,7 +54,7 @@
                 {% for n in news %}
                     <article class="event-item">
                         <figure>
-                            <a title="{{ n.title }}" href="{% url 'blog.single' n.id %}">
+                            <a title="{{ n.title }}" href="{% url 'blog.single' n.slug %}">
                                 <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
                                 <div class="mask radius">
                                     <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
@@ -62,7 +62,7 @@
                             </a>
                         </figure>
                         <h3 class="entry-header">
-                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'blog.single' n.id %}">{{ n.title }}</a>
+                            <a title="Change a Life Through Education Lorem Ipsum dolar sit and dolar" href="{% url 'blog.single' n.slug %}">{{ n.title }}</a>
                         </h3>
 
                         <div class="entry-meta-widget">
