@@ -67,30 +67,30 @@
 
         <aside id="wpltfb-2" class="widget WPlookCauses">
             <div class="widget-title">
-                <h3>Events</h3>
-                <div class="viewall fright"><a href="{% url 'event.index' when='all' %}" class="radius" title="View all events">view all</a></div>
+                <h3>News</h3>
+                <div class="viewall fright"><a href="{% url 'blog.index' %}" class="radius" title="View all news">view all</a></div>
                 <div class="clear"></div>
             </div>
 
             <div class="widget-event-body">
 
                 <!-- Event -->
-                {% for e in sidebar_events %}
+                {% for n in sidebar_news %}
                     <article class="event-item">
                         <figure>
-                            <a title="{{ e.title }}" href="{% url 'event.single' e.slug %}">
-                                <img width="272" height="150" src="{{ e.image.url }}" class="wp-post-image" alt="{{ e.title }}">
+                            <a title="{{ n.title }}" href="{% url 'blog.single' n.slug %}">
+                                <img width="272" height="150" src="{{ n.image.url }}" class="wp-post-image" alt="{{ n.title }}">
                                 <div class="mask radius">
                                     <div class="mask-square"><i class="fa fa-link" aria-hidden="true"></i></div>
                                 </div>
                             </a>
                         </figure>
                         <h3 class="entry-header">
-                            <a title="Change a Life Through Education" href="{% url 'event.single' e.slug %}">{{ e.title }}</a>
+                            <a title="Change a Life Through Education" href="{% url 'blog.single' n.slug %}">{{ n.title }}</a>
                         </h3>
 
                         <div class="entry-meta-widget">
-                            <div class="date"><time datetime="{{ e.date.date }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ e.date|date:"M d, Y" }}</time></div>
+                            <div class="date"><time datetime="{{ n.date.timestamp }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ n.date.timestamp|date:"M d, Y" }}</time></div>
                             {# <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">51 Sherbrooke W., Montreal</a></div> #}
                             {# <div class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> <a href="#">Facebook</a></div> #}
                         </div>
