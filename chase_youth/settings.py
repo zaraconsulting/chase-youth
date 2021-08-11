@@ -87,18 +87,18 @@ WSGI_APPLICATION = 'chase_youth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG == True:
+if DEBUG == 'True':
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DEV_DB_NAME'),
-        'USER': env('DEV_DB_USER'),
-        'PASSWORD': env('DEV_DB_PASSWORD'),
-        'HOST': env('DEV_DB_HOST'),
-        'PORT': env('DEV_DB_PORT'),
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env('DEV_DB_NAME'),
+            'USER': env('DEV_DB_USER'),
+            'PASSWORD': env('DEV_DB_PASSWORD'),
+            'HOST': env('DEV_DB_HOST'),
+            'PORT': env('DEV_DB_PORT'),
+        }
     }
-}
-else:
+elif DEBUG == 'False':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
