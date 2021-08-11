@@ -6,6 +6,9 @@ class StaffRole(models.Model):
     rank = models.IntegerField()
     name = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = 'Staff Roles'
+
     def __str__(self):
         return f'{self.name}'
 

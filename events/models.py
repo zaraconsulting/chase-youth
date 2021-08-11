@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from chase_youth.settings import env
 
 
@@ -16,6 +17,12 @@ class Event(models.Model):
     description_5 = models.TextField(null=True, blank=True)
     date = models.DateTimeField(null=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(default='', editable=False, max_length=200)
+
+    def save(self, *args, **kwargs):
+        value = self.title
+        self.slug = slugify(value, allow_unicode=True)
+        super().save(*args, **kwargs)
 
     def to_dict(self):
         data = {
