@@ -19,7 +19,7 @@
                         <img width="200" height="210" src="{{ s.image.url }}" class="wp-post-image" alt="{{ s.first_name }} {{ s.last_name }}">
                     {% endif %}
                     <div class="name">{{ s.first_name }}  {{ s.last_name }}</div>
-                    <div class="position">{% if s.role %}{{ s.role|lower }}{% else %}board member{% endif %}</div>
+                    <div class="position">{{ s.staff_role.name }}</div>
                     <!--<div class="social-icons">
                         <a class="fb radius" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                         <a class="tw radius" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
