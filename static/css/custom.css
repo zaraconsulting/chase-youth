@@ -1,7 +1,7 @@
-.list.event img {
-    /* height: 170px; */
+/* .list.event img {
+    height: 170px;
     max-width: 292px;
-}
+} */
 
 /* #teaser li > img {
     height: 714px;
@@ -113,6 +113,12 @@ aside article figure img, .widget-area figure img {
     height: 100%;
 }
 
+article figure .mask.radius .mask-square {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
 .announcement-description {
     margin-top: 10px;
 }
@@ -128,7 +134,8 @@ aside article figure img, .widget-area figure img {
         height: 300px;
         min-width: 100%;
 }
-*/ 
+*/
+
 .forth-home-widget-area {
     padding-bottom: 0;
     margin-bottom: 0;
