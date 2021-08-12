@@ -15,6 +15,7 @@ class StaffRole(models.Model):
 class Staff(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
+    staff_role = models.ForeignKey(StaffRole, on_delete=models.CASCADE)
     image = models.FileField(upload_to='staff', null=True, blank=True)
     intro = models.TextField() 
     bio1 = models.TextField()
@@ -23,7 +24,6 @@ class Staff(models.Model):
     bio4 = models.TextField(null=True, blank=True)
     bio5 = models.TextField(null=True, blank=True)
     slug = models.SlugField(default='', editable=False, max_length=200)
-    staff_role = models.ForeignKey(StaffRole, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Staff Members'

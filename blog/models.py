@@ -21,6 +21,8 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     # image_display = models.FileField(upload_to='blog/post')
+    is_featured = models.BooleanField(default=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE) 
     image = models.FileField(upload_to='blog/post')
     text1 = models.TextField(null=True, blank=True)
     text2 = models.TextField(null=True, blank=True)
@@ -29,9 +31,7 @@ class Post(models.Model):
     text5 = models.TextField(null=True, blank=True)
     text6 = models.TextField(null=True, blank=True)
     text7 = models.TextField(null=True, blank=True)
-    is_featured = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE) 
     slug = models.SlugField(default='', editable=False, max_length=200)
 
 

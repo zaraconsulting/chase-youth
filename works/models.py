@@ -47,7 +47,7 @@ class Work(models.Model):
     excerpt_font_color = models.ForeignKey(ExcerptFontColor, on_delete=models.CASCADE)
     image = models.FileField(upload_to='works')
     excerpt = models.TextField(null=False)
-    description_1 = models.TextField(null=False)
+    description_1 = models.TextField(null=True, blank=True)
     description_2 = models.TextField(null=True, blank=True)
     description_3 = models.TextField(null=True, blank=True)
     description_4 = models.TextField(null=True, blank=True)
@@ -55,8 +55,8 @@ class Work(models.Model):
     slug = models.SlugField(default='', editable=False, max_length=200)
 
     class Meta:
-        verbose_name = 'News'
-        verbose_name_plural = 'News'
+        verbose_name = 'Works'
+        verbose_name_plural = 'Works'
 
     def to_dict(self):
         data = {
