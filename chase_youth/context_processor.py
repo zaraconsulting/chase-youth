@@ -8,7 +8,7 @@ def export_context(request):
         'ADMIN_EMAIL_TO': env('ADMIN_EMAIL_TO'),
         'FACEBOOK_URL': env('FACEBOOK_URL'),
         'ADMIN_PHONE': env('ADMIN_PHONE'),
-        'SNAPCHAT_URL': env('SNAPCHAT_URL'),
+        'CASHAPP_URL': env('CASHAPP_URL'),
         'PAYPAL_URL': env('PAYPAL_URL'),
     }
     return data
