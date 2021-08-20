@@ -14,7 +14,7 @@ function copyToClipboard()
     document.execCommand('copy');
     document.body.removeChild(el);
 
-    $('#snapchat-copy-link').text('Copied!')
+    $('#snapchat-copy-link').text('Copied!');
     setTimeout(() =>
     {
         $('#snapchat-copy-link').text('$CHASEYOUTH');
@@ -22,4 +22,4 @@ function copyToClipboard()
 
 
 }
-document.querySelector('#snapchat-copy-link').addEventListener('click', copyToClipboard)
+// document.querySelector('#snapchat-copy-link').addEventListener('click', copyToClipboard)
